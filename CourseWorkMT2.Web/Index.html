@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<!-- define angular app -->
+<html ng-app="crudApp">
+<head>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<!-- define angular controller -->
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Курсовой проект</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Главная</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Категории
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#allcategory">Все</a></li>
+                        <li><a href="#addcategory">Добавить новую</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Регионы
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#allregion">Все</a></li>
+                        <li><a href="#addregion">Добавить новый</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Грузоотправители
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#allshipper">Все</a></li>
+                        <li><a href="#addshipper">Добавить нового</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Территории
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#allterritory">Все</a></li>
+                        <li><a href="#addterritory">Добавить новую</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Работники
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#allemployee">Все</a></li>
+                        <li><a href="#addemployee">Добавить нового</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#report"> Самые активные сотрудники</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main" style="margin: 30px;">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+
+    </div>
+
+    <footer class="text-center">
+        <p>Rich Internet Applications EndTerm</p>
+    </footer>
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.js"></script>
+    <!--<script src="signalr/hubs"></script>-->
+    <script src="Scripts/core/app.js"></script>
+</body>
+</html>

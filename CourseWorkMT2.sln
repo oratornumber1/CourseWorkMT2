@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2.DAL", "Course
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2.API", "CourseWorkMT2.API\CourseWorkMT2.API.csproj", "{1698B480-A324-407F-9B6D-BCEF70A52929}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2.Web", "CourseWorkMT2.Web\CourseWorkMT2.Web.csproj", "{F8053CCD-77BD-4C08-8478-284F884AEE0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1698B480-A324-407F-9B6D-BCEF70A52929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1698B480-A324-407F-9B6D-BCEF70A52929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1698B480-A324-407F-9B6D-BCEF70A52929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8053CCD-77BD-4C08-8478-284F884AEE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8053CCD-77BD-4C08-8478-284F884AEE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8053CCD-77BD-4C08-8478-284F884AEE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8053CCD-77BD-4C08-8478-284F884AEE0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,7 +26,8 @@ namespace CourseWorkMT2
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Category>("Categories");
-            builder.EntitySet<CustomerDemographic>("CustomerDemographics");
+            builder.ComplexType<Employee>();
+            //builder.EntitySet<CustomerDemographic>("CustomerDemographics");
             builder.EntitySet<Region>("Regions");
             builder.EntitySet<Shipper>("Shippers");
             builder.EntitySet<Territory>("Territories");

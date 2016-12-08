@@ -7,6 +7,7 @@ using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using System.Web.OData.Batch;
 using Microsoft.OData.Edm;
+using System.Web.Http.Cors;
 
 namespace CourseWorkMT2.API
 {
@@ -14,6 +15,8 @@ namespace CourseWorkMT2.API
     {
         public static void Register(HttpConfiguration config)
         {
+            EnableCrossSiteRequests(config);
+
             config.MapODataServiceRoute("odata", null, GetEdmModel(), new DefaultODataBatchHandler(GlobalConfiguration.DefaultServer));
             config.EnsureInitialized();
             //// Web API configuration and services
@@ -28,6 +31,15 @@ namespace CourseWorkMT2.API
             //    routeTemplate: "api/{controller}/{id}",
             //    defaults: new { id = RouteParameter.Optional }
             //);
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config)
+        {
+            var cors = new EnableCorsAttribute(
+                origins: "*",
+                headers: "*",
+                methods: "*");
+            config.EnableCors(cors);
         }
 
         private static IEdmModel GetEdmModel()
