@@ -151,5 +151,50 @@ namespace CourseWorkMT2
         }
         #endregion
 
+        #region shippers
+        public void GetShippers()
+        {
+            var shippers = db.Shippers.ToList();
+            Clients.Caller.retrieveShippers();
+        }
+
+        public void AddShipper(string companyName, string phone)
+        {
+            var shipper = new Shipper { CompanyName = companyName, Phone = phone };
+            db.Shippers.Add(shipper);
+            db.SaveChanges();
+            Clients.All.retrieveNewShipper(shipper);
+        }
+
+        public void UpdateShipper(int id, string companyName, string phone)
+        {
+            var shipper = db.Shippers.Find(id);
+            if (shipper == null)
+            {
+                Clients.Caller.retrieveError("Запись не найдена");
+                return;
+            }
+
+            shipper.CompanyName = companyName;
+            shipper.Phone = phone;
+
+            db.SaveChanges();
+            Clients.All.retrieveUpdatedShipper(shipper);
+        }
+
+        public void DeleteShipper(int id)
+        {
+            var shipper = db.Shippers.Find(id);
+            if (shipper == null)
+            {
+                Clients.Caller.retrieveError("Запись не найдена");
+                return;
+            }
+
+            db.Entry(shipper).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
+            Clients.All.retrieveDeletedShipper(id);
+        }
+        #endregion
     }
 }

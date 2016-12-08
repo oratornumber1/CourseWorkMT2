@@ -22,30 +22,30 @@ namespace CourseWorkMT2.API.Controllers
     using System.Web.Http.OData.Extensions;
     using CourseWorkMT2.DAL;
     ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Supplier>("Suppliers");
-    builder.EntitySet<Product>("Products"); 
+    builder.EntitySet<Shipper>("Shippers");
+    builder.EntitySet<Order>("Orders"); 
     config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
     */
-    public class SuppliersController : ODataController
+    public class ShippersController : ODataController
     {
         private NorthWindContext db = new NorthWindContext();
 
-        // GET: odata/Suppliers
+        // GET: odata/Shippers
         [EnableQuery]
-        public IQueryable<Supplier> GetSuppliers()
+        public IQueryable<Shipper> GetShippers()
         {
-            return db.Suppliers;
+            return db.Shippers;
         }
 
-        // GET: odata/Suppliers(5)
+        // GET: odata/Shippers(5)
         [EnableQuery]
-        public SingleResult<Supplier> GetSupplier([FromODataUri] int key)
+        public SingleResult<Shipper> GetShipper([FromODataUri] int key)
         {
-            return SingleResult.Create(db.Suppliers.Where(supplier => supplier.SupplierID == key));
+            return SingleResult.Create(db.Shippers.Where(shipper => shipper.ShipperID == key));
         }
 
-        // PUT: odata/Suppliers(5)
-        public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<Supplier> patch)
+        // PUT: odata/Shippers(5)
+        public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<Shipper> patch)
         {
             //Validate(patch.GetEntity());
 
@@ -54,13 +54,13 @@ namespace CourseWorkMT2.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            Supplier supplier = await db.Suppliers.FindAsync(key);
-            if (supplier == null)
+            Shipper shipper = await db.Shippers.FindAsync(key);
+            if (shipper == null)
             {
                 return NotFound();
             }
 
-            patch.Put(supplier);
+            patch.Put(shipper);
 
             try
             {
@@ -68,7 +68,7 @@ namespace CourseWorkMT2.API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SupplierExists(key))
+                if (!ShipperExists(key))
                 {
                     return NotFound();
                 }
@@ -78,26 +78,26 @@ namespace CourseWorkMT2.API.Controllers
                 }
             }
 
-            return Updated(supplier);
+            return Updated(shipper);
         }
 
-        // POST: odata/Suppliers
-        public async Task<IHttpActionResult> Post(Supplier supplier)
+        // POST: odata/Shippers
+        public async Task<IHttpActionResult> Post(Shipper shipper)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Suppliers.Add(supplier);
+            db.Shippers.Add(shipper);
             await db.SaveChangesAsync();
 
-            return Created(supplier);
+            return Created(shipper);
         }
 
-        // PATCH: odata/Suppliers(5)
+        // PATCH: odata/Shippers(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<Supplier> patch)
+        public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<Shipper> patch)
         {
             //Validate(patch.GetEntity());
 
@@ -106,13 +106,13 @@ namespace CourseWorkMT2.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            Supplier supplier = await db.Suppliers.FindAsync(key);
-            if (supplier == null)
+            Shipper shipper = await db.Shippers.FindAsync(key);
+            if (shipper == null)
             {
                 return NotFound();
             }
 
-            patch.Patch(supplier);
+            patch.Patch(shipper);
 
             try
             {
@@ -120,7 +120,7 @@ namespace CourseWorkMT2.API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SupplierExists(key))
+                if (!ShipperExists(key))
                 {
                     return NotFound();
                 }
@@ -130,29 +130,29 @@ namespace CourseWorkMT2.API.Controllers
                 }
             }
 
-            return Updated(supplier);
+            return Updated(shipper);
         }
 
-        // DELETE: odata/Suppliers(5)
+        // DELETE: odata/Shippers(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {
-            Supplier supplier = await db.Suppliers.FindAsync(key);
-            if (supplier == null)
+            Shipper shipper = await db.Shippers.FindAsync(key);
+            if (shipper == null)
             {
                 return NotFound();
             }
 
-            db.Suppliers.Remove(supplier);
+            db.Shippers.Remove(shipper);
             await db.SaveChangesAsync();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // GET: odata/Suppliers(5)/Products
+        // GET: odata/Shippers(5)/Orders
         [EnableQuery]
-        public IQueryable<Product> GetProducts([FromODataUri] int key)
+        public IQueryable<Order> GetOrders([FromODataUri] int key)
         {
-            return db.Suppliers.Where(m => m.SupplierID == key).SelectMany(m => m.Products);
+            return db.Shippers.Where(m => m.ShipperID == key).SelectMany(m => m.Orders);
         }
 
         protected override void Dispose(bool disposing)
@@ -164,9 +164,9 @@ namespace CourseWorkMT2.API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SupplierExists(int key)
+        private bool ShipperExists(int key)
         {
-            return db.Suppliers.Count(e => e.SupplierID == key) > 0;
+            return db.Shippers.Count(e => e.ShipperID == key) > 0;
         }
     }
 }
