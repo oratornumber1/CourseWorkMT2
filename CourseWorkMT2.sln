@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2", "CourseWorkMT2\CourseWorkMT2.csproj", "{36BFD24F-70A3-4951-9B6F-65DDA90D9D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2.DAL", "CourseWorkMT2.DAL\CourseWorkMT2.DAL.csproj", "{0872BC26-3E8C-4396-B50D-8AA31F1C2A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWorkMT2.API", "CourseWorkMT2.API\CourseWorkMT2.API.csproj", "{1698B480-A324-407F-9B6D-BCEF70A52929}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36BFD24F-70A3-4951-9B6F-65DDA90D9D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BFD24F-70A3-4951-9B6F-65DDA90D9D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BFD24F-70A3-4951-9B6F-65DDA90D9D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BFD24F-70A3-4951-9B6F-65DDA90D9D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0872BC26-3E8C-4396-B50D-8AA31F1C2A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0872BC26-3E8C-4396-B50D-8AA31F1C2A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0872BC26-3E8C-4396-B50D-8AA31F1C2A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0872BC26-3E8C-4396-B50D-8AA31F1C2A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1698B480-A324-407F-9B6D-BCEF70A52929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1698B480-A324-407F-9B6D-BCEF70A52929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1698B480-A324-407F-9B6D-BCEF70A52929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1698B480-A324-407F-9B6D-BCEF70A52929}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
