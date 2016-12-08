@@ -10,6 +10,7 @@ namespace CourseWorkMT2
     public class CrudHub : Hub
     {
         NorthWindContext db = new NorthWindContext();
+    
 
         #region categories
         public void GetCategories()
